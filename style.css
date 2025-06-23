@@ -1,8 +1,10 @@
 :root {
-    --bg-color:   #4d0eba;
-    --card-bg:    #decabb;
-    --accent:     #7060b7;
-    --text-color: #f5f5f5;
+    --bg-color:   #1d1431;
+    --card-bg:    #2b0f5f;
+    --primary:    #390b8d;
+    --hover:       #570f97;
+    --accent:     #8f13af;
+    --text-color: #daabb9;
   }
   
   * {
@@ -138,7 +140,7 @@
   }
   
   a:hover {
-    color: var(--card-bg);
+    color: var(--hover);
   }
   
   .skill {
@@ -212,8 +214,8 @@
     transition: background 0.2s ease;
   }
   button:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
+    background: var(--bg-color);
+    color: var(--accent);
   }
 
   .projects {
