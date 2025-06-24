@@ -190,7 +190,7 @@
   }
   .skill-progress {
     height: 100%;
-    background: var(--accent);
+    background: linear-gradient();
     border-radius: 8px 0 0 8px;
   }
   
