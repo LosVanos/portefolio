@@ -219,7 +219,7 @@
     padding-bottom: 0.5em;
     border: none;
     border-radius: 8px;
-    background: var(--accent);
+    background: var(--primary);
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s ease;
