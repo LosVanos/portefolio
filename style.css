@@ -30,9 +30,10 @@ a, button, .card {
 }
 
 .container {
-  width: 75%;
-  max-width: 90%;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 header {
@@ -55,6 +56,7 @@ header .container {
 }
 header h1 {
   font-size: 1.8rem;
+  flex: 1;
 }
 header #menu-toggle {
   display: none;
@@ -64,6 +66,7 @@ header .menu-icon {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 1001;
 }
 header .menu-icon span {
   width: 25px;
@@ -72,9 +75,13 @@ header .menu-icon span {
   border-radius: 2px;
   transition: 0.3s ease;
 }
+header nav {
+  flex: 2;
+}
 header nav ul {
   list-style: none;
   display: flex;
+  justify-content: flex-end;
   gap: 2rem;
 }
 header nav ul li a {
@@ -87,11 +94,13 @@ header nav ul li a:hover {
 }
 @media (max-width: 768px) {
   header .container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
   }
   header .menu-icon {
     display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
   header nav ul {
     display: none;
@@ -99,6 +108,9 @@ header nav ul li a:hover {
     width: 100%;
     text-align: center;
     margin-top: 1rem;
+    background: var(--glass-bg);
+    border-radius: 8px;
+    padding: 1rem 0;
   }
   header #menu-toggle:checked + .menu-icon + nav ul {
     display: flex;
@@ -185,24 +197,21 @@ header nav ul li a:hover {
   color: var(--text-color);
 }
 
-.skill {
-  margin-bottom: 1rem;
+#projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
-.skill .skill-name {
+
+img.avatar-float {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 1rem;
   display: block;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
-}
-.skill .skill-bar {
-  background: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  height: 12px;
-}
-.skill .skill-bar .skill-progress {
-  height: 100%;
-  background: linear-gradient(to right, var(--accent), var(--orange), var(--primary));
-  border-radius: 8px 0 0 8px;
 }
 
 @keyframes fadeInUp {
