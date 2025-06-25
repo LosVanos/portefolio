@@ -1,1 +1,274 @@
-sass styles.scss styles.css --watch
+@charset "UTF-8";
+:root {
+  --bg-color: #0a0a0a;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --primary: #8b5cf6;
+  --hover: #a855f7;
+  --accent: #d946ef;
+  --text-color: #ffffff;
+  --blur: blur(16px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #2e1a47);
+  color: var(--text-color);
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 75%;
+  max-width: 90%;
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+header h1 {
+  font-size: 1.8rem;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+header nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+header nav a:hover {
+  color: var(--accent);
+}
+
+.section {
+  padding: 3rem 0;
+}
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+#projects-container {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  perspective: 800px;
+}
+#projects-container .projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#projects-container .card {
+  width: 220px;
+  height: 320px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+#projects-container .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+#projects-container .card h3,
+#projects-container .card h4 {
+  text-align: center;
+}
+#projects-container .card h4 {
+  background-color: var(--accent);
+  margin: 0 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+#projects-container .card .descriçao {
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
+}
+#projects-container .card .btn {
+  background: var(--primary);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+#projects-container .card .btn:hover {
+  background: var(--hover);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.8);
+  color: var(--accent);
+}
+
+.imagem {
+  display: flex;
+  align-items: center;
+}
+.imagem .avatar-float {
+  float: right;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 1em 1em;
+  display: block;
+}
+
+.descriçaop,
+.life {
+  text-indent: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: var(--hover);
+}
+
+.skill {
+  margin-bottom: 1rem;
+}
+.skill .skill-name {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+.skill .skill-bar {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 12px;
+}
+.skill .skill-bar .skill-progress {
+  height: 100%;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  border-radius: 8px 0 0 8px;
+}
+
+#contact form {
+  background: var(--glass-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+#contact form .form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#contact form .form-grid .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+#contact form .form-group label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+#contact form .form-group input,
+#contact form .form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: none;
+  overflow: hidden;
+}
+#contact form .form-group input::placeholder,
+#contact form .form-group textarea::placeholder {
+  color: #bbb;
+}
+#contact form .form-group textarea {
+  min-height: 120px;
+  line-height: 1.5;
+  white-space: normal;
+  word-wrap: break-word;
+}
+#contact form .form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+#contact form button.enviar {
+  width: 160px;
+  padding: 0.7em 1em;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--text-color);
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+#contact form button.enviar:hover {
+  background: var(--hover);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.8);
+  color: var(--accent);
+}
+
+#text-mirror {
+  visibility: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.75rem 1rem;
+  height: 40px;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

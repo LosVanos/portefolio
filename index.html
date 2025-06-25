@@ -58,7 +58,7 @@
             <br>
             <p class="descriçao">Este projeto esta em desenvolvimento, volta num futuro proximo para descubrires mais.</p>
             <br>
-            <a href="#"><button>Projeto em desenvolvimento</button></a>
+            <a href="#"><button class="btn">Projeto em desenvolvimento</button></a>
           </div>
           <div class="card" data-index="2">
             <h3>Projeto 3</h3>
@@ -98,20 +98,26 @@
   <section id="contact" class="section">
     <div class="container">
       <h2>Contato</h2>
-      <form>
+      <form action="https://formspree.io/f/xvgrvqwa" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+        </div>
+
         <div class="form-group">
-          <label>Nome</label>
-          <input type="text" placeholder="Seu nome">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Escreva sua mensagem…" required></textarea>
         </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="seu@email.com">
+
+        <div class="form-submit">
+          <button type="submit" class="enviar">Enviar</button>
         </div>
-        <div class="form-group" id="mensage">
-          <label>Mensagem</label>
-          <textarea rows="4" placeholder="Escreva sua mensagem…"></textarea>
-        </div>
-        <button type="submit" class="enviar">Enviar</button>
       </form>
     </div>
   </section>
